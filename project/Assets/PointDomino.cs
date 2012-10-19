@@ -16,13 +16,13 @@ public class PointDomino : MonoBehaviour {
 		
 		var screenPosition = Input.mousePosition;
 		screenPosition.z = Camera.main.transform.position.y;
-		screenPosition.z = Camera.main.transform.position.y;
-		transform.position = Camera.main.ScreenToWorldPoint(screenPosition);
-		
+		//
+		var wpos = Camera.main.ScreenToWorldPoint(screenPosition);
+		wpos.y = 3;
+		transform.position = wpos;
+		//
 		if(Input.GetMouseButtonDown(0))
 		{
-			var pos = transform.position;
-			pos.y = 1;
 			Instantiate(dominoPrefab,transform.position, transform.rotation);
 		}
 		
