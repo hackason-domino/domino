@@ -6,6 +6,9 @@ public class PointDomino : MonoBehaviour {
 	
 	public Transform dominoPrefab;
 	
+	public Color gGolor;
+	
+	
 	// Use this for initialization
 	void Start () {
 	
@@ -49,4 +52,13 @@ public class PointDomino : MonoBehaviour {
 		//}
 	}
 	
+	void OnGUI()
+	{
+		//var rColor = GUI.TextField (new Rect (16, 16, 50, 16), "10");
+		//var gColor = GUI.TextField (new Rect (16, 32, 50, 16), "10");
+		//var bColor = GUI.TextField (new Rect (16, 48, 50, 16), "B");
+		//gGolor.r = int.Parse(rColor); 
+		//gGolor.g = int.Parse(gColor); 
+		//gGolor.b = int.Parse(bColor); 
+	}
 }
