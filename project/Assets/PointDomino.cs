@@ -30,6 +30,7 @@ public class PointDomino : MonoBehaviour {
 			if (Input.GetButtonDown("Fire1"))
 			{
 				var obj = Instantiate(dominoPrefab, transform.position, transform.rotation) as GameObject;
+				obj.name = "Domino";
 				
 				//DominoManager.DominoItem item = new DominoManager.DominoItem();
 				//item.GameObject = obj;
@@ -60,5 +61,6 @@ public class PointDomino : MonoBehaviour {
 		//gGolor.r = int.Parse(rColor); 
 		//gGolor.g = int.Parse(gColor); 
 		//gGolor.b = int.Parse(bColor); 
+		
 	}
 }

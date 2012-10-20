@@ -3,12 +3,19 @@ using System.Collections;
 
 public class EndDomino : MonoBehaviour {
 	
+	public Transform sakura;
+	
+	public int offset_x = 40;
+	public int offset_y = 26;
+	public int fontSize	= 50;
+	
+	
 	private GUIStyle style;
 	private bool bClear = false;
 	// Use this for initialization
 	void Start () {
 		style = new GUIStyle();
-		style.fontSize = 30;	
+		style.fontSize = fontSize;	
 	}
 	
 	// Update is called once per frame
@@ -17,7 +24,9 @@ public class EndDomino : MonoBehaviour {
 	}
 	void OnCollisionEnter(Collision colli)
 	{
-		if(colli.gameObject.name == "Domino")
+		if(colli.gameObject.name == "DominoStart"
+		|| colli.gameObject.name == "Domino"
+		|| colli.gameObject.name == "Domino(Clone)")
 		{
 			bClear = true;
 		}
@@ -26,7 +35,10 @@ public class EndDomino : MonoBehaviour {
 	{
 		if(bClear == true)
 		{
-			GUI.Label(new Rect(16,16, 400, 300), "Clear!!", style);
+			GUI.Label(new Rect(Screen.width/2 - offset_x, Screen.height/2 - offset_y, 400, 300), "Clear!!", style);
+			
+			if (!sakura.gameObject.active)
+				sakura.gameObject.active = true;
 		}
 	}
 }
